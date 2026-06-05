@@ -50,6 +50,11 @@ export const metadata: Metadata = {
     title: `${DATA.name}`,
     card: "summary_large_image",
   },
+  icons: {
+    icon: "/download%20(8).png",
+    shortcut: "/download%20(8).png",
+    apple: "/download%20(8).png",
+  },
   verification: {
     google: "",
     yandex: "",

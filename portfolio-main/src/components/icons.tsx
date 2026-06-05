@@ -1,4 +1,57 @@
-import { GlobeIcon, MailIcon } from "lucide-react";
+import {
+  Activity,
+  Boxes,
+  Braces,
+  Cloud,
+  Code2,
+  Database,
+  Eye,
+  FlaskConical,
+  Gauge,
+  GitBranch,
+  GlobeIcon,
+  Layers,
+  MailIcon,
+  Rocket,
+  Search,
+  Server,
+  Settings,
+  Terminal,
+  Workflow,
+  Zap,
+} from "lucide-react";
+import {
+  SiApachekafka,
+  SiArgo,
+  SiBun,
+  SiCloudflare,
+  SiCodeforces,
+  SiCypress,
+  SiElasticsearch,
+  SiExpress,
+  SiGrafana,
+  SiGnubash,
+  SiGit,
+  SiGithubactions,
+  SiHtml5,
+  SiJavascript,
+  SiJest,
+  SiLeetcode,
+  SiLinux,
+  SiPwa,
+  SiPrisma,
+  SiPrometheus,
+  SiRedis,
+  SiRender,
+  SiReact,
+  SiTerraform,
+  SiTurborepo,
+  SiVercel,
+  SiVite,
+  SiHelm,
+  SiJenkins,
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -36,28 +89,8 @@ export const Icons = {
       <path d="M29.41,9.26a3.5,3.5,0,0,0-2.47-2.47C24.76,6.2,16,6.2,16,6.2s-8.76,0-10.94.59A3.5,3.5,0,0,0,2.59,9.26,36.13,36.13,0,0,0,2,16a36.13,36.13,0,0,0,.59,6.74,3.5,3.5,0,0,0,2.47,2.47C7.24,25.8,16,25.8,16,25.8s8.76,0,10.94-.59a3.5,3.5,0,0,0,2.47-2.47A36.13,36.13,0,0,0,30,16,36.13,36.13,0,0,0,29.41,9.26ZM13.2,20.2V11.8L20.47,16Z" />
     </svg>
   ),
-  leetcode: (props: IconProps) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <title>LeetCode</title>
-      <path
-        fill="currentColor"
-        d="M9.41 6.17a2.5 2.5 0 0 1 3.54 0l1.24 1.24-1.41 1.41-1.24-1.24a.5.5 0 0 0-.71 0l-6.06 6.06a2 2 0 0 0 0 2.83l2.66 2.66a2 2 0 0 0 2.83 0l6.06-6.06 1.41 1.41-6.06 6.06a4 4 0 0 1-5.66 0l-2.66-2.66a4 4 0 0 1 0-5.66z"
-      />
-      <path
-        fill="currentColor"
-        d="M14.79 4.79a1 1 0 0 1 1.42 0l3.5 3.5a1 1 0 0 1 0 1.42l-2.74 2.74a1 1 0 1 1-1.42-1.42l2.03-2.03-2.79-2.79a1 1 0 0 1 0-1.42z"
-      />
-    </svg>
-  ),
-  codeforces: (props: IconProps) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <title>Codeforces</title>
-      <circle cx="6" cy="6" r="2" fill="currentColor" />
-      <rect x="3" y="10" width="4" height="10" rx="1" fill="currentColor" />
-      <rect x="10" y="4" width="4" height="16" rx="1" fill="currentColor" />
-      <rect x="17" y="12" width="4" height="8" rx="1" fill="currentColor" />
-    </svg>
-  ),
+  leetcode: (props: IconProps) => <SiLeetcode {...props} />,
+  codeforces: (props: IconProps) => <SiCodeforces {...props} />,
   nextjs: (props: IconProps) => (
     <svg
       role="img"
@@ -103,6 +136,51 @@ export const Icons = {
       <path d="m12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624-1.176-1.194-2.537-2.576-5.512-2.576zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624-1.176-1.194-2.537-2.576-5.512-2.576z" />
     </svg>
   ),
+  code: (props: IconProps) => <Code2 {...props} />,
+  terminal: (props: IconProps) => <Terminal {...props} />,
+  database: (props: IconProps) => <Database {...props} />,
+  server: (props: IconProps) => <Server {...props} />,
+  cloud: (props: IconProps) => <Cloud {...props} />,
+  gitBranch: (props: IconProps) => <GitBranch {...props} />,
+  workflow: (props: IconProps) => <Workflow {...props} />,
+  boxes: (props: IconProps) => <Boxes {...props} />,
+  activity: (props: IconProps) => <Activity {...props} />,
+  gauge: (props: IconProps) => <Gauge {...props} />,
+  braces: (props: IconProps) => <Braces {...props} />,
+  zap: (props: IconProps) => <Zap {...props} />,
+  search: (props: IconProps) => <Search {...props} />,
+  rocket: (props: IconProps) => <Rocket {...props} />,
+  flask: (props: IconProps) => <FlaskConical {...props} />,
+  eye: (props: IconProps) => <Eye {...props} />,
+  layers: (props: IconProps) => <Layers {...props} />,
+  settings: (props: IconProps) => <Settings {...props} />,
+  javascript: (props: IconProps) => <SiJavascript {...props} />,
+  pwa: (props: IconProps) => <SiPwa {...props} />,
+  vite: (props: IconProps) => <SiVite {...props} />,
+  html5: (props: IconProps) => <SiHtml5 {...props} />,
+  express: (props: IconProps) => <SiExpress {...props} />,
+  bun: (props: IconProps) => <SiBun {...props} />,
+  prisma: (props: IconProps) => <SiPrisma {...props} />,
+  redis: (props: IconProps) => <SiRedis {...props} />,
+  helm: (props: IconProps) => <SiHelm {...props} />,
+  aws: (props: IconProps) => <FaAws {...props} />,
+  terraform: (props: IconProps) => <SiTerraform {...props} />,
+  argocd: (props: IconProps) => <SiArgo {...props} />,
+  jenkins: (props: IconProps) => <SiJenkins {...props} />,
+  kafka: (props: IconProps) => <SiApachekafka {...props} />,
+  cloudflare: (props: IconProps) => <SiCloudflare {...props} />,
+  linux: (props: IconProps) => <SiLinux {...props} />,
+  git: (props: IconProps) => <SiGit {...props} />,
+  githubActions: (props: IconProps) => <SiGithubactions {...props} />,
+  jest: (props: IconProps) => <SiJest {...props} />,
+  cypress: (props: IconProps) => <SiCypress {...props} />,
+  prometheus: (props: IconProps) => <SiPrometheus {...props} />,
+  grafana: (props: IconProps) => <SiGrafana {...props} />,
+  bash: (props: IconProps) => <SiGnubash {...props} />,
+  turborepo: (props: IconProps) => <SiTurborepo {...props} />,
+  elasticsearch: (props: IconProps) => <SiElasticsearch {...props} />,
+  vercel: (props: IconProps) => <SiVercel {...props} />,
+  render: (props: IconProps) => <SiRender {...props} />,
   typescript: (props: IconProps) => (
     <svg
       viewBox="0 0 32 32"

@@ -1,3 +1,5 @@
+"use client";
+
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Separator } from "@/components/ui/separator";
@@ -8,8 +10,24 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
+import { useState } from "react";
+import { Check } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
+  const [copied, setCopied] = useState(false);
+
+  const handleEmailClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(DATA.contact.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${DATA.contact.email}`;
+    }
+  };
+
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-30">
       <Dock className="z-50 pointer-events-auto relative h-14 p-2 w-fit mx-auto flex gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5">
@@ -47,27 +65,49 @@ export default function Navbar() {
           .filter(([_, social]) => social.navbar)
           .map(([name, social], index) => {
             const isExternal = social.url.startsWith("http");
+            const isEmail = name === "email";
             const IconComponent = social.icon;
             return (
               <Tooltip key={`social-${name}-${index}`}>
                 <TooltipTrigger asChild>
-                  <a
-                    href={social.url}
-                    target={isExternal ? "_blank" : undefined}
-                    rel={isExternal ? "noopener noreferrer" : undefined}
-                  >
-                    <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
-                      <IconComponent className="size-full rounded-sm overflow-hidden object-contain" />
-                    </DockIcon>
-                  </a>
+                  {isEmail ? (
+                    <button onClick={handleEmailClick}>
+                      <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+                        <IconComponent className="size-full rounded-sm overflow-hidden object-contain" />
+                      </DockIcon>
+                    </button>
+                  ) : (
+                    <a
+                      href={social.url}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                    >
+                      <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+                        <IconComponent className="size-full rounded-sm overflow-hidden object-contain" />
+                      </DockIcon>
+                    </a>
+                  )}
                 </TooltipTrigger>
                 <TooltipContent
                   side="top"
                   sideOffset={8}
-                  className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+                  className={cn(
+                    "rounded-xl px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-colors duration-300",
+                    isEmail && copied 
+                      ? "bg-emerald-600 dark:bg-emerald-500 text-white" 
+                      : "bg-primary text-primary-foreground"
+                  )}
                 >
-                  <p>{name}</p>
-                  <TooltipArrow className="fill-primary" />
+                  <div className="flex items-center gap-1.5 font-medium">
+                    {isEmail && copied && <Check className="size-3.5" />}
+                    <p>{isEmail && copied ? "Copied!" : isEmail ? "Copy Email" : name}</p>
+                  </div>
+                  <TooltipArrow className={cn(
+                    "transition-colors duration-300",
+                    isEmail && copied 
+                      ? "fill-emerald-600 dark:fill-emerald-500" 
+                      : "fill-primary"
+                  )} />
                 </TooltipContent>
               </Tooltip>
             );

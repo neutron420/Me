@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const si = require\\('react-icons/si'\\); console.log\\('SiLeetcode:', typeof si.SiLeetcode\\); console.log\\('SiCodeforces:', typeof si.SiCodeforces\\); console.log\\('SiGrpc:', typeof si.SiGrpc\\); console.log\\('SiDebezium:', typeof si.SiDebezium\\);\")"
+    ]
+  }
+}
