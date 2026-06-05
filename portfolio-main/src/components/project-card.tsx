@@ -84,27 +84,6 @@ export function ProjectCard({
               <ProjectImage src={image} alt={title} />
             ) : null}
           </Link>
-          {links && links.length > 0 && (
-            <div className="absolute top-2 right-2 flex flex-wrap gap-2">
-              {links.map((link, idx) => (
-                <Link
-                  href={link.href}
-                  key={idx}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <Badge
-                    className="flex items-center gap-1.5 text-xs bg-black text-white hover:bg-black/90"
-                    variant="default"
-                  >
-                    {link.icon}
-                    {link.type}
-                  </Badge>
-                </Link>
-              ))}
-            </div>
-          )}
         </div>
       )}
       <div className="p-6 flex flex-col gap-3 flex-1">
@@ -123,11 +102,9 @@ export function ProjectCard({
             <ArrowUpRight className="h-4 w-4" aria-hidden />
           </Link>
         </div>
-        <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
-          <Markdown>{description}</Markdown>
-        </div>
-        {!hasMedia && links && links.length > 0 && (
-          <div className="flex flex-wrap gap-2">
+        
+        {links && links.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
             {links.map((link, idx) => (
               <Link
                 href={link.href}
@@ -137,7 +114,7 @@ export function ProjectCard({
                 onClick={(e) => e.stopPropagation()}
               >
                 <Badge
-                  className="flex items-center gap-1.5 text-xs bg-black text-white hover:bg-black/90"
+                  className="flex items-center gap-1.5 text-xs bg-primary text-primary-foreground hover:opacity-90 cursor-pointer"
                   variant="default"
                 >
                   {link.icon}
@@ -147,19 +124,26 @@ export function ProjectCard({
             ))}
           </div>
         )}
-        {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-1 mt-auto">
-            {tags.map((tag) => (
-              <Badge
-                key={tag}
-                className="text-[11px] font-medium border border-border h-6 w-fit px-2"
-                variant="outline"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )}
+
+        <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
+          <Markdown>{description}</Markdown>
+        </div>
+        
+        <div className="flex flex-col gap-3 mt-auto">
+          {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-1">
+              {tags.map((tag) => (
+                <Badge
+                  key={tag}
+                  className="text-[11px] font-medium border border-border h-6 w-fit px-2"
+                  variant="outline"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
