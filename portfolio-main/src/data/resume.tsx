@@ -91,18 +91,7 @@ export const DATA = {
         icon: Icons.x,
         navbar: true,
       },
-      LeetCode: {
-        name: "LeetCode",
-        url: "https://leetcode.com/u/neutron420",
-        icon: Icons.leetcode,
-        navbar: true,
-      },
-      Codeforces: {
-        name: "Codeforces",
-        url: "https://codeforces.com/profile/Coder-04Rit",
-        icon: Icons.codeforces,
-        navbar: true,
-      },
+
       email: {
         name: "Send Email",
         url: "mailto:fnaticritesh2004@gmail.com",
@@ -433,47 +422,47 @@ export const DATA = {
       links: [],
     },
     {
-      title: "Cardano Hackathon Asia",
+      title: "Cardano Hackathon Asia Finalist",
       dates: "IBW Edition 2025",
       location: "Bengaluru, India",
       description:
-        "Participated in the Cardano Hackathon Asia (IBW Edition 2025) held in Bengaluru, building a decentralized application on the Cardano blockchain. Worked on smart contracts and Web3 integrations to solve real-world problems using blockchain technology.",
+        "Secured a finalist spot in the Cardano Hackathon Asia (IBW Edition 2025) held in Bengaluru, building a decentralized application on the Cardano blockchain. Worked on smart contracts and Web3 integrations to solve real-world problems using blockchain technology.",
       image: "/cardano.jpg",
       links: [],
     },
     {
-      title: "Smart India Hackathon",
+      title: "Smart India Hackathon Finalist",
       dates: "2024",
       location: "IIT ISM Dhanbad, India",
       description:
-        "Competed in India's largest national-level hackathon organized by the Government of India, hosted at IIT ISM Dhanbad. Built innovative solutions to real-world problem statements provided by ministries and industries, focusing on impactful tech for societal challenges.",
+        "Finalist at India's largest national-level hackathon organized by the Government of India, hosted at IIT ISM Dhanbad. Built innovative solutions to real-world problem statements provided by ministries and industries, focusing on impactful tech for societal challenges.",
       image: "/download%20(4).png",
       links: [],
     },
     {
-      title: "Hack The Stack",
+      title: "Hack The Stack Winner",
       dates: "2024",
       location: "Bhubaneswar, India",
       description:
-        "Participated in a 36-hour full-stack hackathon focused on building scalable web applications. Designed and shipped a production-ready full-stack project using modern technologies like Next.js, TypeScript, and PostgreSQL.",
+        "Won first place (Winner) at the 36-hour full-stack hackathon focused on building scalable web applications. Designed and shipped a production-ready full-stack project using modern technologies like Next.js, TypeScript, and PostgreSQL.",
       image: "/download%20(3).png",
       links: [],
     },
     {
-      title: "Code Relay 4.0",
+      title: "Code Relay 4.0 Winner",
       dates: "2024",
       location: "Bhubaneswar, India",
       description:
-        "Participated in Code Relay 4.0, a coding and development hackathon. Collaborated with a team to build innovative solutions under tight deadlines, demonstrating skills in problem-solving, system design, and rapid prototyping.",
+        "Won first place (Winner) at Code Relay 4.0, a coding and development hackathon. Collaborated with a team to build innovative solutions under tight deadlines, demonstrating skills in problem-solving, system design, and rapid prototyping.",
       image: "/coderelay.jpg",
       links: [],
     },
     {
-      title: "Hack Odisha 5.0",
+      title: "Hack Odisha 5.0 Winner",
       dates: "2024",
       location: "Bhubaneswar, Odisha, India",
       description:
-        "Participated in Hack Odisha 5.0, one of Odisha's largest student hackathons held in Bhubaneswar. Built a full-stack project from scratch within 36 hours, focusing on user experience, scalable architecture, and clean code.",
+        "Won first place (Winner) at Hack Odisha 5.0, one of Odisha's largest student hackathons held in Bhubaneswar. Built a full-stack project from scratch within 36 hours, focusing on user experience, scalable architecture, and clean code.",
       image: "/download%20(6).png",
       links: [],
     },
